@@ -1,4 +1,5 @@
-import { PrismaClient } from '../prisma/client/index.js'
+import { PrismaClient } from '@prisma/client'
+
 
 const students = new PrismaClient().student
 
@@ -33,7 +34,9 @@ export const fullProfile = async ( id ) => {
                 include: {
                     lecturers: true
                 }
-            }
+            },
+            backend: true,
+            database: true
         }
     } )
 
@@ -56,14 +59,15 @@ export const profile = async ( studentName ) => {
 export const list = async ( search ) => {
     const itemPerPage = parseInt( search.itemPerPage ) || 30
     const page = search.page-- || 0
-    
+
     const data = await students.findMany( {
         skip: page * itemPerPage,
         take: itemPerPage,
         where: {
             isActive: search.isActive,
             name: {
-                search: search.name
+                contains: search.name,
+                mode: 'insensitive'
             }
         }
     } )

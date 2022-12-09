@@ -18,6 +18,11 @@ export const getProfile = async ( req, res, next ) => {
 
 export const createStudentAccount = async ( req, res, next ) => {
     try {
+        req.body.user = {}
+        req.body.user.connect = { id: req.body.userId }
+
+        delete req.body.userId
+
         const result = await studentService.create( req.body )
         await userService.update( { id: result.user.id, role: 'Student' } )
         res.status( 200 ).json( result )
@@ -39,36 +44,26 @@ export const updateStudentAccount = async ( req, res, next ) => {
 
 export const createProject = async ( req, res, next ) => {
     try {
-        delete req.body.isActive
-
-        const studentId = req.body.studentId
-        req.body.student = {}
-        req.body.student.connect = {}
-        req.body.student.connect.id = parseInt( studentId )
+        req.body.student = {
+            connect: {
+                id: parseInt( req.body.studentId )
+            }
+        }
         delete req.body.studentId
-        console.log(req.body);
-        const lecturerTemp = req.body.lecturers
-        req.body.lecturers = {}
         req.body.lecturers = {
-            connect: lecturerTemp || undefined
+            connect: req.body.lecturers
         }
 
-        const techTemp = req.body.tech
-        req.body.tech = {}
-        req.body.tech = {
-            connect: techTemp || undefined
+        req.body.method = {
+            connect: req.body.method || undefined
         }
 
-        const researchFieldTemp = req.body.researchFields
-        req.body.researchFields = {}
-        req.body.researchFields = {
-            connect: researchFieldTemp || undefined
+        req.body.researchField = {
+            connect: req.body.researchField || undefined
         }
 
-        const methodTemp = req.body.methods
-        req.body.methods = {}
-        req.body.methods = {
-            connect: methodTemp || undefined
+        req.body.method = {
+            connect: req.body.method || undefined
         }
 
         const result = await projectService.create( req.body )
@@ -92,8 +87,17 @@ export const updateProject = async ( req, res, next ) => {
 
 export const createBackend = async ( req, res, next ) => {
     try {
+        req.body.student = {
+            connect: {
+                id: parseInt( req.body.studentId )
+            }
+        }
+        
+        delete req.body.isActive
+        delete req.body.studentId
 
-        res.status( 200 ).json( { message: "OK" } )
+        const result = await backendService.create( req.body )
+        res.status( 200 ).json( result )
     } catch ( error ) {
         next( error )
     }
@@ -101,8 +105,9 @@ export const createBackend = async ( req, res, next ) => {
 
 export const updateBackend = async ( req, res, next ) => {
     try {
-
-        res.status( 200 ).json( { message: "OK" } )
+        delete req.body.isActive
+        const result = await backendService.update( req.body )
+        res.status( 200 ).json( result )
     } catch ( error ) {
         next( error )
     }
@@ -110,8 +115,17 @@ export const updateBackend = async ( req, res, next ) => {
 
 export const createDatabase = async ( req, res, next ) => {
     try {
+        req.body.student = {
+            connect: {
+                id: parseInt( req.body.studentId )
+            }
+        }
 
-        res.status( 200 ).json( { message: "OK" } )
+        delete req.body.isActive
+        delete req.body.studentId
+
+        const result = await databaseService.create( req.body )
+        res.status( 200 ).json( result )
     } catch ( error ) {
         next( error )
     }
@@ -119,8 +133,9 @@ export const createDatabase = async ( req, res, next ) => {
 
 export const updateDatabase = async ( req, res, next ) => {
     try {
-
-        res.status( 200 ).json( { message: "OK" } )
+        delete req.body.isActive
+        const result = await databaseService.update( req.body )
+        res.status( 200 ).json( result )
     } catch ( error ) {
         next( error )
     }

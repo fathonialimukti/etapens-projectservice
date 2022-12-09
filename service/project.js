@@ -1,10 +1,10 @@
-import { PrismaClient } from '../prisma/client/index.js'
+import { PrismaClient } from '@prisma/client'
+
 
 const projects = new PrismaClient().project
 
 
 export const create = async ( data ) => {
-    console.log(data);
     const project = await projects.create( {
         data: data
     } )
@@ -12,44 +12,39 @@ export const create = async ( data ) => {
 }
 
 export const list = async ( search ) => {
-    const itemPerPage = parseInt( parseInt( search.itemPerPage ) ) || 12
+    const itemPerPage = parseInt( parseInt( search.itemPerPage ) ) || 24
     const page = search.page - 1 || 0
 
-
-    const data = await projects.findMany( {
+    const listProject = await projects.findMany( {
         skip: page * itemPerPage,
         take: itemPerPage,
         where: {
             isActive: search.isActive,
             title: {
-                search: search.title,
+                contains: search.title,
+                mode: 'insensitive'
             },
-            tech: {
+            tech: search.tech && {
                 some: {
-                    name: {
-                        in: search.tech
-                    }
+                    name: { in: search.tech }
                 }
             },
-            // researchFields: {
-            //     some: {
-            //         name: {
-            //             in: search.researchFields
-            //         }
-            //     }
-            // },
-            // methods: {
-            //     some: {
-            //         name: {
-            //             in: search.methods
-            //         }
-            //     }
-            // }
+            researchField: search.researchField && {
+                some: {
+                    name: { in: search.researchField }
+                }
+            },
+            method: search.method && {
+                some: {
+                    name: { in: search.method }
+                }
+            }
         },
         include: {
             student: {
-                include: {
-                    user: true
+                select: {
+                    name: true,
+                    nrp: true
                 }
             },
             tech: {
@@ -62,37 +57,106 @@ export const list = async ( search ) => {
             id: 'desc'
         }
     } )
-    const totalPage = Math.ceil( await projects.count( {
+
+    // const totalPage = Math.ceil( await projects.count( {
+    //     where: {
+    //         isActive: search.isActive,
+    //         title: {
+    //             contains: search.title,
+    //         },
+    //         tech: {
+    //             every: {
+    //                 name: {
+    //                     in: search.tech || undefined
+    //                 }
+    //             }
+    //         },
+    //         researchFields: {
+    //             every: {
+    //                 name: {
+    //                     in: search.researchFields || undefined
+    //                 }
+    //             }
+    //         },
+    //         methods: {
+    //             every: {
+    //                 name: {
+    //                     in: search.methods || undefined
+    //                 }
+    //             }
+    //         }
+    //     }
+    // } ) / itemPerPage )
+
+    const totalPage = 1
+
+    return { data: listProject, totalPage }
+}
+
+export const listAdmin = async ( search ) => {
+    const itemPerPage = parseInt( parseInt( search.itemPerPage ) ) || 24
+    const page = search.page - 1 || 0
+
+    const listProject = await projects.findMany( {
+        skip: page * itemPerPage,
+        take: itemPerPage,
         where: {
             isActive: search.isActive,
             title: {
-                search: search.title,
+                contains: search.title,
+                mode: 'insensitive'
             },
-            tech: {
-                some: {
-                    name: {
-                        in: search.tech
+        },
+        include: {
+            student: {
+                select: {
+                    name: true,
+                    user: {
+                        select: {
+                            username: true
+                        }
                     }
                 }
-            },
-            // researchFields: {
-            //     some: {
-            //         name: {
-            //             in: search.researchFields
-            //         }
-            //     }
-            // },
-            // methods: {
-            //     some: {
-            //         name: {
-            //             in: search.methods
-            //         }
-            //     }
-            // }
+            }
+        },
+        orderBy: {
+            id: 'desc'
         }
-    } ) / itemPerPage )
+    } )
 
-    return { data, totalPage }
+    // const totalPage = Math.ceil( await projects.count( {
+    //     where: {
+    //         isActive: search.isActive,
+    //         title: {
+    //             contains: search.title,
+    //         },
+    //         tech: {
+    //             every: {
+    //                 name: {
+    //                     in: search.tech || undefined
+    //                 }
+    //             }
+    //         },
+    //         researchFields: {
+    //             every: {
+    //                 name: {
+    //                     in: search.researchFields || undefined
+    //                 }
+    //             }
+    //         },
+    //         methods: {
+    //             every: {
+    //                 name: {
+    //                     in: search.methods || undefined
+    //                 }
+    //             }
+    //         }
+    //     }
+    // } ) / itemPerPage )
+
+    const totalPage = 1
+
+    return { data: listProject, totalPage }
 }
 
 export const get = async ( title ) => {

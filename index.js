@@ -25,6 +25,8 @@ app.use( '/admin', adminRoutes )
 app.use( '/lecturer', lecturerRoute )
 app.use( errorHandler )
 
-app.listen( 4000, () =>
-  logger.info( `🚀 Server ready at: http://localhost:4000 ⭐️ Good luck`),
+const port = process.env.PORT || 4000
+
+app.listen( port, () =>
+  logger.info( `🚀 Server ready at: http://localhost:${ port } ⭐️ `),
 )

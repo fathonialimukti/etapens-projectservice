@@ -1,23 +1,48 @@
-import { PrismaClient } from '../prisma/client/index.js'
+import { PrismaClient } from '@prisma/client'
+
 
 const researchField = new PrismaClient().researchField
 
 
-export const create = async ( ) => {}
+export const list = async ( search ) => {
+    const itemPerPage = parseInt( parseInt( search.itemPerPage ) ) || 25
+    const page = search.page - 1 || 0
 
-export const list = async ( ) => {}
-
-export const find = async ( name ) => {
-    const researchFieldList = researchField.findMany( {
-        take: 5,
+    const researchFields = await researchField.findMany( {
+        take: itemPerPage,
+        skip: page * itemPerPage,
         where: {
             name: {
-                search: name
+                contains: search.name,
+                mode: 'insensitive'
             },
-        },
-        select: {
-            name: true,
         }
     } )
-    return researchFieldList
+
+    const totalPage = Math.ceil( await researchField.count( {
+        where: {
+            name: {
+                contains: search.name,
+                mode: 'insensitive'
+            },
+        }
+    } ) / itemPerPage )
+
+    return { data: researchFields, totalPage }
+}
+
+export const create = async ( data ) => {
+    const newResearchField = await researchField.create( {
+        data: data
+    } )
+
+    return newResearchField
+}
+
+export const remove = async ( id ) => {
+    await researchField.delete( {
+        where: {
+            id: parseInt(id)
+        }
+    } )
 }

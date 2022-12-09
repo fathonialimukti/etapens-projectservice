@@ -12,10 +12,9 @@ import * as researchMethodService from "../service/research-method.js"
 
 export const listProject = async ( req, res, next ) => {
     try {
-        const search = req.query
-        search.isActive = true
+        req.query.isActive = true
 
-        const result = await projectService.list( search )
+        const result = await projectService.list( req.query )
 
         res.status( 200 ).json( result )
     } catch ( error ) {
@@ -86,7 +85,11 @@ export const findLecturer = async ( req, res, next ) => {
 
 export const findTechList = async ( req, res, next ) => {
     try {
-        const result = await techListService.find( req.query.name )
+        const search = {
+            name: req.query.name,
+            itemPerPage: 5
+        }
+        const result = await techListService.list( search )
 
         res.status( 200 ).json( result )
     } catch ( error ) {
@@ -96,7 +99,11 @@ export const findTechList = async ( req, res, next ) => {
 
 export const findResearchField = async ( req, res, next ) => {
     try {
-        const result = await researchFieldService.find( req.query.name )
+        const search = {
+            name: req.query.name,
+            itemPerPage: 5
+        }
+        const result = await researchFieldService.list( search )
 
         res.status( 200 ).json( result )
     } catch ( error ) {
@@ -106,7 +113,11 @@ export const findResearchField = async ( req, res, next ) => {
 
 export const findResearchMethod = async ( req, res, next ) => {
     try {
-        const result = await researchMethodService.find( req.query.name )
+        const search = {
+            name: req.query.name,
+            itemPerPage: 5
+        }
+        const result = await researchMethodService.list( search )
 
         res.status( 200 ).json( result )
     } catch ( error ) {

@@ -1,4 +1,5 @@
-import { PrismaClient } from '../prisma/client/index.js'
+import { PrismaClient } from '@prisma/client'
+
 
 const lecturers = new PrismaClient().lecturer
 
@@ -67,7 +68,8 @@ export const list = async ( search ) => {
         where: {
             isActive: search.isActive,
             name: {
-                search: search.name
+                contains: search.name,
+                mode: 'insensitive'
             }
         }
     } )
@@ -87,17 +89,18 @@ export const activate = async ( id ) => {
 }
 
 export const find = async ( name ) => {
-    const lecturer = lecturers.findMany( {
+    const lecturer = await lecturers.findMany( {
         take: 5,
         where: {
             name: {
-                search: name
+                contains: name,
+                mode: 'insensitive'
             },
             isActive: true
         },
         select: {
             name: true,
         }
-    })
+    } )
     return lecturer
 }

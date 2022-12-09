@@ -1,25 +1,46 @@
-import { PrismaClient } from '../prisma/client/index.js'
+import { PrismaClient } from '@prisma/client'
 
 const techList = new PrismaClient().techList
 
+export const list = async ( search ) => {
+    const itemPerPage = parseInt( parseInt( search.itemPerPage ) ) || 25
+    const page = search.page - 1 || 0
 
-export const create = async (  ) => {
-}
-
-export const list = async (  ) => {
-}
-
-export const find = async ( name ) => {
-    const tech = techList.findMany( {
-        take: 5,
+    const techs = await techList.findMany( {
+        take: itemPerPage,
+        skip: page * itemPerPage,
         where: {
             name: {
-                search: name
+                contains: search.name,
+                mode: 'insensitive'
             },
-        },
-        select: {
-            name: true,
         }
     } )
-    return tech
+
+    const totalPage = Math.ceil( await techList.count( {
+        where: {
+            name: {
+                contains: search.name,
+                mode: 'insensitive'
+            },
+        }
+    } ) / itemPerPage )
+
+    return { data: techs, totalPage }
+}
+
+export const create = async ( data ) => {
+    const newTech = await techList.create( {
+        data: data
+    } )
+
+    return newTech
+}
+
+export const remove = async ( id ) => {
+    await techList.delete( {
+        where: {
+            id: parseInt( id )
+        }
+    } )
 }

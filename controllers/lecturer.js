@@ -19,6 +19,11 @@ export const getProfile = async ( req, res, next ) => {
 
 export const createLecturerAccount = async ( req, res, next ) => {
     try {
+        req.body.user = {}
+        req.body.user.connect = { id: req.body.userId }
+
+        delete req.body.userId
+
         const result = await lecturerService.create( req.body )
         await userService.update( { id: result.user.id, role: 'Lecturer' } )
         res.status( 200 ).json( result )
