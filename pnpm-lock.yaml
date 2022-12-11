@@ -6,6 +6,8 @@ specifiers:
   cors: ^2.8.5
   dotenv: ^16.0.3
   express: ^4.18.2
+  fs: 0.0.1-security
+  https: ^1.0.0
   morgan: ^1.10.0
   nodemon: ^2.0.20
   prisma: ^4.7.1
@@ -17,6 +19,8 @@ dependencies:
   cors: 2.8.5
   dotenv: 16.0.3
   express: 4.18.2
+  fs: 0.0.1-security
+  https: 1.0.0
   morgan: 1.10.0
   winston: 3.8.2
 
@@ -373,6 +377,10 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  /fs/0.0.1-security:
+    resolution: {integrity: sha512-3XY9e1pP0CVEUCdj5BmfIZxRBTSDycnbqhIOGec9QYtmVH2fbLpj86CFWkrNOkt/Fvty4KZG5lTglL9j/gJ87w==}
+    dev: false
+
   /fsevents/2.3.2:
     resolution: {integrity: sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -426,6 +434,10 @@ packages:
       setprototypeof: 1.2.0
       statuses: 2.0.1
       toidentifier: 1.0.1
+    dev: false
+
+  /https/1.0.0:
+    resolution: {integrity: sha512-4EC57ddXrkaF0x83Oj8sM6SLQHAWXw90Skqu2M4AEWENZ3F02dFJE/GARA8igO79tcgYqGrD7ae4f5L3um2lgg==}
     dev: false
 
   /iconv-lite/0.4.24:

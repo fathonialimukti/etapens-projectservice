@@ -7,10 +7,16 @@ import adminRoutes from './routes/admin.js'
 import indexRoute from './routes/index.js'
 import errorHandler from './middleware/error.js'
 import morganMiddleware from './utils/morgan.js'
-import logger from './utils/logger.js'
 import lecturerRoute from './routes/lecturer.js'
+import https from 'https'
+import fs from 'fs'
 
 const app = express()
+
+const options = {
+  key: fs.readFileSync( './private.key' ),
+  cert: fs.readFileSync( './certificate.crt' )
+}
 
 app.use( express.json( { limit: '30mb', extended: true } ) )
 app.use( express.urlencoded( { limit: '30mb', extended: true } ) )
@@ -27,6 +33,4 @@ app.use( errorHandler )
 
 const port = process.env.PORT || 4000
 
-app.listen( port, () =>
-  logger.info( `🚀 Server ready at: http://localhost:${ port } ⭐️ `),
-)
+https.createServer( options, app ).listen( port )

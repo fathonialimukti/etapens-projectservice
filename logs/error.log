@@ -21245,3 +21245,76 @@
 [31mNote: Lines with + are required, lines with ? are optional.[39m
 [31m[39m
 2022-12-10 15:03:28:328 [31merror[39m: [31m[GET] /admin/list-user >> StatusCode:: 500, Message:: ReferenceError: listProject is not defined[39m
+2022-12-11 16:21:53:2153 [31merror[39m: [31m[GET] / >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.findMany()` invocation:[39m
+
+[31m{[39m
+[31m  skip: 0,[39m
+[31m  take: 24,[39m
+[31m  where: {[39m
+[31m    isActive: true,[39m
+[31m    title: {[39m
+[31m      contains: undefined,[39m
+[31m      mode: 'insensitive'[39m
+[31m    },[39m
+[31m    tech: {[39m
+[31m      every: {[39m
+[31m        name: {[39m
+[31m          IN: 'React Js'[39m
+[31m          ~~[39m
+[31m        }[39m
+[31m      }[39m
+[31m    },[39m
+[31m    researchField: undefined,[39m
+[31m    method: undefined[39m
+[31m  },[39m
+[31m  include: {[39m
+[31m    student: {[39m
+[31m      select: {[39m
+[31m        name: true,[39m
+[31m        nrp: true[39m
+[31m      }[39m
+[31m    },[39m
+[31m    tech: {[39m
+[31m      select: {[39m
+[31m        name: true[39m
+[31m      }[39m
+[31m    }[39m
+[31m  },[39m
+[31m  orderBy: {[39m
+[31m    id: 'desc'[39m
+[31m  }[39m
+[31m}[39m
+
+[31mUnknown arg `IN` in where.tech.every.name.IN for type StringFilter. Did you mean `in`? Available args:[39m
+[31mtype StringFilter {[39m
+[31m  equals?: String[39m
+[31m  in?: List<String>[39m
+[31m  notIn?: List<String>[39m
+[31m  lt?: String[39m
+[31m  lte?: String[39m
+[31m  gt?: String[39m
+[31m  gte?: String[39m
+[31m  contains?: String[39m
+[31m  startsWith?: String[39m
+[31m  endsWith?: String[39m
+[31m  search?: String[39m
+[31m  mode?: QueryMode[39m
+[31m  not?: String | NestedStringFilter[39m
+[31m}[39m
+
+[31m[39m
+2022-12-11 21:36:26:3626 [31merror[39m: [31m[GET] / >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.findMany()` invocation:[39m
+
+
+[31mCan't reach database server at `127.0.0.1`:`5432`[39m
+
+[31mPlease make sure your database server is running at `127.0.0.1`:`5432`.[39m
+2022-12-11 21:37:40:3740 [31merror[39m: [31m[GET] / >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.findMany()` invocation:[39m
+
+
+[31mCan't reach database server at `127.0.0.1`:`5432`[39m
+
+[31mPlease make sure your database server is running at `127.0.0.1`:`5432`.[39m
