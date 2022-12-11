@@ -20410,3 +20410,838 @@
 [31mCan't reach database server at `localhost`:`5432`[39m
 
 [31mPlease make sure your database server is running at `localhost`:`5432`.[39m
+2022-12-10 00:31:16:3116 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    title: 'Judul Tugas Akhir',[39m
+[31m    description: 'Deskripsi',[39m
+[31m    lecturers: {[39m
+[31m      connect: [[39m
+[31m        {[39m
+[31m          name: 'Fathoni Lecturer'[39m
+[31m        },[39m
+[31m        {[39m
+[31m          name: 'Mu\'arifin, S.ST., M.T.'[39m
+[31m        }[39m
+[31m      ][39m
+[31m    },[39m
+[31m    video: '9nOFwh55RsU',[39m
+[31m    type: 'WebStatic',[39m
+[31m    runtimeVersion: null,[39m
+[31m    sourceCode: 'https://github.com/fathonialimukti/etapens-frontend.git',[39m
+[31m    url: null,[39m
+[31m    tech: [[39m
+[31m      {[39m
+[31m        id: 15,[39m
+[31m        name: 'Vue Js',[39m
+[31m        projectId: null[39m
+[31m      }[39m
+[31m    ],[39m
+[31m    ~~~~~~~~~~~~~~~~~~~[39m
+[31m    method: {[39m
+[31m      connect: {[39m
+[31m        connect: [[39m
+[31m        ~~~~~~~[39m
+[31m          {[39m
+[31m            id: 1,[39m
+[31m            name: 'Microservices',[39m
+[31m            projectId: null[39m
+[31m          }[39m
+[31m        ][39m
+[31m      }[39m
+[31m    },[39m
+[31m    researchField: {[39m
+[31m      connect: [[39m
+[31m        {[39m
+[31m          id: 3,[39m
+[31m          name: 'Pengabdian Lembaga',[39m
+[31m          projectId: null[39m
+[31m          ~~~~~~~~~[39m
+[31m        },[39m
+[31m        {[39m
+[31m          id: 1,[39m
+[31m          name: 'Pendidikan',[39m
+[31m          projectId: null[39m
+[31m          ~~~~~~~~~[39m
+[31m        }[39m
+[31m      ][39m
+[31m      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39m
+[31m    },[39m
+[31m    documents: [],[39m
+[31m    images: [],[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: 1[39m
+[31m      }[39m
+[31m    }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument tech: Got invalid value [39m
+[31m[[39m
+[31m  {[39m
+[31m    id: 15,[39m
+[31m    name: 'Vue Js',[39m
+[31m    projectId: null[39m
+[31m  }[39m
+[31m][39m
+[31mon prisma.createOneProject. Provided List<Json>, expected TechListCreateNestedManyWithoutProjectInput:[39m
+[31mtype TechListCreateNestedManyWithoutProjectInput {[39m
+[31m  create?: TechListCreateWithoutProjectInput | List<TechListCreateWithoutProjectInput> | TechListUncheckedCreateWithoutProjectInput | List<TechListUncheckedCreateWithoutProjectInput>[39m
+[31m  connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | List<TechListCreateOrConnectWithoutProjectInput>[39m
+[31m  connect?: TechListWhereUniqueInput | List<TechListWhereUniqueInput>[39m
+[31m}[39m
+[31mUnknown arg `connect` in data.method.connect.connect for type ResearchMethodWhereUniqueInput. Did you mean `select`? Available args:[39m
+[31mtype ResearchMethodWhereUniqueInput {[39m
+[31m  id?: Int[39m
+[31m  name?: String[39m
+[31m}[39m
+[31mArgument data.researchField.connect of type ResearchFieldWhereUniqueInput needs exactly one argument, but you provided id and name and projectId. Please choose one. Available args: [39m
+[31mtype ResearchFieldWhereUniqueInput {[39m
+[31m  id?: Int[39m
+[31m  name?: String[39m
+[31m}[39m
+[31mUnknown arg `projectId` in data.researchField.connect.0.projectId for type ResearchFieldWhereUniqueInput. Available args:[39m
+
+[31mtype ResearchFieldWhereUniqueInput {[39m
+[31m  id?: Int[39m
+[31m  name?: String[39m
+[31m}[39m
+[31mUnknown arg `projectId` in data.researchField.connect.1.projectId for type ResearchFieldWhereUniqueInput. Available args:[39m
+
+[31mtype ResearchFieldWhereUniqueInput {[39m
+[31m  id?: Int[39m
+[31m  name?: String[39m
+[31m}[39m
+
+[31m[39m
+2022-12-10 00:31:24:3124 [31merror[39m: [31m[PATCH] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.update()` invocation:[39m
+
+[31m{[39m
+[31m  where: {[39m
+[31m?   id?: Int,[39m
+[31m?   title?: String,[39m
+[31m?   studentId?: Int[39m
+[31m  },[39m
+[31m  data: {[39m
+[31m    title: 'Judul Tugas Akhir',[39m
+[31m    studentId: 1,[39m
+[31m    description: 'Deskripsi',[39m
+[31m    lecturers: [[39m
+[31m      {[39m
+[31m        name: 'Fathoni Lecturer'[39m
+[31m      },[39m
+[31m      {[39m
+[31m        name: 'Mu\'arifin, S.ST., M.T.'[39m
+[31m      }[39m
+[31m    ],[39m
+[31m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39m
+[31m    video: '9nOFwh55RsU',[39m
+[31m    type: 'WebStatic',[39m
+[31m    runtimeVersion: null,[39m
+[31m    sourceCode: 'https://github.com/fathonialimukti/etapens-frontend.git',[39m
+[31m    url: null,[39m
+[31m    tech: [[39m
+[31m      {[39m
+[31m        id: 15,[39m
+[31m        name: 'Vue Js',[39m
+[31m        projectId: null[39m
+[31m      }[39m
+[31m    ],[39m
+[31m    ~~~~~~~~~~~~~~~~~~~[39m
+[31m    method: [[39m
+[31m      {[39m
+[31m        id: 1,[39m
+[31m        name: 'Microservices',[39m
+[31m        projectId: null[39m
+[31m      }[39m
+[31m    ],[39m
+[31m    ~~~~~~~~~~~~~~~~~~~~~~~~~~[39m
+[31m    researchField: [[39m
+[31m      {[39m
+[31m        id: 3,[39m
+[31m        name: 'Pengabdian Lembaga',[39m
+[31m        projectId: null[39m
+[31m      },[39m
+[31m      {[39m
+[31m        id: 1,[39m
+[31m        name: 'Pendidikan',[39m
+[31m        projectId: null[39m
+[31m      }[39m
+[31m    ],[39m
+[31m    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[39m
+[31m    documents: [[39m
+[31m      {[39m
+[31m        name: '2103197016 - APLIKASI KOMUNITAS YUK NGAJI MOJOKERTO BERBASIS WEB DAN MOBILE.pdf',[39m
+[31m        url: 'https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/fathonistudent/documents/2103197016+-+APLIKASI+KOMUNITAS+YUK+NGAJI+MOJOKERTO+BERBASIS+WEB+DAN+MOBILE.pdf'[39m
+[31m      }[39m
+[31m    ],[39m
+[31m    images: [[39m
+[31m      'https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/fathonistudent/images/28.png',[39m
+[31m      'https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/fathonistudent/images/27.png'[39m
+[31m    ][39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument where of type ProjectWhereUniqueInput needs at least one argument. Available args are listed in green.[39m
+[31mArgument lecturers: Got invalid value [39m
+[31m[[39m
+[31m  {[39m
+[31m    name: 'Fathoni Lecturer'[39m
+[31m  },[39m
+[31m  {[39m
+[31m    name: 'Mu\'arifin, S.ST., M.T.'[39m
+[31m  }[39m
+[31m][39m
+[31mon prisma.updateOneProject. Provided List<Json>, expected LecturerUncheckedUpdateManyWithoutProjectNestedInput:[39m
+[31mtype LecturerUncheckedUpdateManyWithoutProjectNestedInput {[39m
+[31m  create?: LecturerCreateWithoutProjectInput | List<LecturerCreateWithoutProjectInput> | LecturerUncheckedCreateWithoutProjectInput | List<LecturerUncheckedCreateWithoutProjectInput>[39m
+[31m  connectOrCreate?: LecturerCreateOrConnectWithoutProjectInput | List<LecturerCreateOrConnectWithoutProjectInput>[39m
+[31m  upsert?: LecturerUpsertWithWhereUniqueWithoutProjectInput | List<LecturerUpsertWithWhereUniqueWithoutProjectInput>[39m
+[31m  set?: LecturerWhereUniqueInput | List<LecturerWhereUniqueInput>[39m
+[31m  disconnect?: LecturerWhereUniqueInput | List<LecturerWhereUniqueInput>[39m
+[31m  delete?: LecturerWhereUniqueInput | List<LecturerWhereUniqueInput>[39m
+[31m  connect?: LecturerWhereUniqueInput | List<LecturerWhereUniqueInput>[39m
+[31m  update?: LecturerUpdateWithWhereUniqueWithoutProjectInput | List<LecturerUpdateWithWhereUniqueWithoutProjectInput>[39m
+[31m  updateMany?: LecturerUpdateManyWithWhereWithoutProjectInput | List<LecturerUpdateManyWithWhereWithoutProjectInput>[39m
+[31m  deleteMany?: LecturerScalarWhereInput | List<LecturerScalarWhereInput>[39m
+[31m}[39m
+[31mArgument tech: Got invalid value [39m
+[31m[[39m
+[31m  {[39m
+[31m    id: 15,[39m
+[31m    name: 'Vue Js',[39m
+[31m    projectId: null[39m
+[31m  }[39m
+[31m][39m
+[31mon prisma.updateOneProject. Provided List<Json>, expected TechListUncheckedUpdateManyWithoutProjectNestedInput:[39m
+[31mtype TechListUncheckedUpdateManyWithoutProjectNestedInput {[39m
+[31m  create?: TechListCreateWithoutProjectInput | List<TechListCreateWithoutProjectInput> | TechListUncheckedCreateWithoutProjectInput | List<TechListUncheckedCreateWithoutProjectInput>[39m
+[31m  connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | List<TechListCreateOrConnectWithoutProjectInput>[39m
+[31m  upsert?: TechListUpsertWithWhereUniqueWithoutProjectInput | List<TechListUpsertWithWhereUniqueWithoutProjectInput>[39m
+[31m  set?: TechListWhereUniqueInput | List<TechListWhereUniqueInput>[39m
+[31m  disconnect?: TechListWhereUniqueInput | List<TechListWhereUniqueInput>[39m
+[31m  delete?: TechListWhereUniqueInput | List<TechListWhereUniqueInput>[39m
+[31m  connect?: TechListWhereUniqueInput | List<TechListWhereUniqueInput>[39m
+[31m  update?: TechListUpdateWithWhereUniqueWithoutProjectInput | List<TechListUpdateWithWhereUniqueWithoutProjectInput>[39m
+[31m  updateMany?: TechListUpdateManyWithWhereWithoutProjectInput | List<TechListUpdateManyWithWhereWithoutProjectInput>[39m
+[31m  deleteMany?: TechListScalarWhereInput | List<TechListScalarWhereInput>[39m
+[31m}[39m
+[31mArgument method: Got invalid value [39m
+[31m[[39m
+[31m  {[39m
+[31m    id: 1,[39m
+[31m    name: 'Microservices',[39m
+[31m    projectId: null[39m
+[31m  }[39m
+[31m][39m
+[31mon prisma.updateOneProject. Provided List<Json>, expected ResearchMethodUncheckedUpdateManyWithoutProjectNestedInput:[39m
+[31mtype ResearchMethodUncheckedUpdateManyWithoutProjectNestedInput {[39m
+[31m  create?: ResearchMethodCreateWithoutProjectInput | List<ResearchMethodCreateWithoutProjectInput> | ResearchMethodUncheckedCreateWithoutProjectInput | List<ResearchMethodUncheckedCreateWithoutProjectInput>[39m
+[31m  connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | List<ResearchMethodCreateOrConnectWithoutProjectInput>[39m
+[31m  upsert?: ResearchMethodUpsertWithWhereUniqueWithoutProjectInput | List<ResearchMethodUpsertWithWhereUniqueWithoutProjectInput>[39m
+[31m  set?: ResearchMethodWhereUniqueInput | List<ResearchMethodWhereUniqueInput>[39m
+[31m  disconnect?: ResearchMethodWhereUniqueInput | List<ResearchMethodWhereUniqueInput>[39m
+[31m  delete?: ResearchMethodWhereUniqueInput | List<ResearchMethodWhereUniqueInput>[39m
+[31m  connect?: ResearchMethodWhereUniqueInput | List<ResearchMethodWhereUniqueInput>[39m
+[31m  update?: ResearchMethodUpdateWithWhereUniqueWithoutProjectInput | List<ResearchMethodUpdateWithWhereUniqueWithoutProjectInput>[39m
+[31m  updateMany?: ResearchMethodUpdateManyWithWhereWithoutProjectInput | List<ResearchMethodUpdateManyWithWhereWithoutProjectInput>[39m
+[31m  deleteMany?: ResearchMethodScalarWhereInput | List<ResearchMethodScalarWhereInput>[39m
+[31m}[39m
+[31mArgument researchField: Got invalid value [39m
+[31m[[39m
+[31m  {[39m
+[31m    id: 3,[39m
+[31m    name: 'Pengabdian Lembaga',[39m
+[31m    projectId: null[39m
+[31m  },[39m
+[31m  {[39m
+[31m    id: 1,[39m
+[31m    name: 'Pendidikan',[39m
+[31m    projectId: null[39m
+[31m  }[39m
+[31m][39m
+[31mon prisma.updateOneProject. Provided List<Json>, expected ResearchFieldUncheckedUpdateManyWithoutProjectNestedInput:[39m
+[31mtype ResearchFieldUncheckedUpdateManyWithoutProjectNestedInput {[39m
+[31m  create?: ResearchFieldCreateWithoutProjectInput | List<ResearchFieldCreateWithoutProjectInput> | ResearchFieldUncheckedCreateWithoutProjectInput | List<ResearchFieldUncheckedCreateWithoutProjectInput>[39m
+[31m  connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | List<ResearchFieldCreateOrConnectWithoutProjectInput>[39m
+[31m  upsert?: ResearchFieldUpsertWithWhereUniqueWithoutProjectInput | List<ResearchFieldUpsertWithWhereUniqueWithoutProjectInput>[39m
+[31m  set?: ResearchFieldWhereUniqueInput | List<ResearchFieldWhereUniqueInput>[39m
+[31m  disconnect?: ResearchFieldWhereUniqueInput | List<ResearchFieldWhereUniqueInput>[39m
+[31m  delete?: ResearchFieldWhereUniqueInput | List<ResearchFieldWhereUniqueInput>[39m
+[31m  connect?: ResearchFieldWhereUniqueInput | List<ResearchFieldWhereUniqueInput>[39m
+[31m  update?: ResearchFieldUpdateWithWhereUniqueWithoutProjectInput | List<ResearchFieldUpdateWithWhereUniqueWithoutProjectInput>[39m
+[31m  updateMany?: ResearchFieldUpdateManyWithWhereWithoutProjectInput | List<ResearchFieldUpdateManyWithWhereWithoutProjectInput>[39m
+[31m  deleteMany?: ResearchFieldScalarWhereInput | List<ResearchFieldScalarWhereInput>[39m
+[31m}[39m
+
+[31mNote: Lines with ? are optional.[39m
+[31m[39m
+2022-12-10 01:04:54:454 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    title: 'Judul',[39m
+[31m    description: 'deskripsi',[39m
+[31m    lecturers: {[39m
+[31m      connect: [[39m
+[31m        {[39m
+[31m          name: 'Mu\'arifin, S.ST., M.T.'[39m
+[31m        },[39m
+[31m        {[39m
+[31m          name: 'Fathoni Lecturer'[39m
+[31m        }[39m
+[31m      ][39m
+[31m    },[39m
+[31m    video: 'OeZVhR1Aefo',[39m
+[31m    type: 'WebStatic',[39m
+[31m    runtimeVersion: null,[39m
+[31m    sourceCode: 'https://github.com/fathonialimukti/etapens-frontend.git',[39m
+[31m    url: null,[39m
+[31m    tech: [],[39m
+[31m    ~~~~[39m
+[31m    method: {[39m
+[31m      connect: {[39m
+[31m        connect: [][39m
+[31m        ~~~~~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    researchField: {[39m
+[31m      connect: [][39m
+[31m    },[39m
+[31m    documents: [],[39m
+[31m    images: [],[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: 1[39m
+[31m      }[39m
+[31m    }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument tech: Got invalid value [] on prisma.createOneProject. Provided List<>, expected TechListCreateNestedManyWithoutProjectInput:[39m
+[31mtype TechListCreateNestedManyWithoutProjectInput {[39m
+[31m  create?: TechListCreateWithoutProjectInput | List<TechListCreateWithoutProjectInput> | TechListUncheckedCreateWithoutProjectInput | List<TechListUncheckedCreateWithoutProjectInput>[39m
+[31m  connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | List<TechListCreateOrConnectWithoutProjectInput>[39m
+[31m  connect?: TechListWhereUniqueInput | List<TechListWhereUniqueInput>[39m
+[31m}[39m
+[31mUnknown arg `connect` in data.method.connect.connect for type ResearchMethodWhereUniqueInput. Did you mean `select`? Available args:[39m
+[31mtype ResearchMethodWhereUniqueInput {[39m
+[31m  id?: Int[39m
+[31m  name?: String[39m
+[31m}[39m
+
+[31m[39m
+2022-12-10 01:07:06:76 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+
+[31mUnique constraint failed on the fields: (`title`)[39m
+2022-12-10 01:15:41:1541 [31merror[39m: [31m[POST] /student/backend >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.backend.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    description: 'Deskripsi',[39m
+[31m    sourceCode: 'https://github.com/fathonialimukti/etapens-projectservice.git',[39m
+[31m    runtimeVersion: 18,[39m
+[31m                    ~~[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: 1[39m
+[31m      }[39m
+[31m    }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument runtimeVersion: Got invalid value 18 on prisma.createOneBackend. Provided Int, expected String or Null.[39m
+
+[31m[39m
+2022-12-10 01:16:21:1621 [31merror[39m: [31m[POST] /student/backend >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.backend.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    description: 'Deskripsi',[39m
+[31m    sourceCode: 'https://github.com/fathonialimukti/etapens-projectservice.git',[39m
+[31m    runtimeVersion: 18,[39m
+[31m                    ~~[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: 1[39m
+[31m      }[39m
+[31m    }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument runtimeVersion: Got invalid value 18 on prisma.createOneBackend. Provided Int, expected String or Null.[39m
+
+[31m[39m
+2022-12-10 01:16:22:1622 [31merror[39m: [31m[POST] /student/backend >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.backend.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    description: 'Deskripsi',[39m
+[31m    sourceCode: 'https://github.com/fathonialimukti/etapens-projectservice.git',[39m
+[31m    runtimeVersion: 18,[39m
+[31m                    ~~[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: 1[39m
+[31m      }[39m
+[31m    }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument runtimeVersion: Got invalid value 18 on prisma.createOneBackend. Provided Int, expected String or Null.[39m
+
+[31m[39m
+2022-12-10 01:16:41:1641 [31merror[39m: [31m[POST] /student/backend >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.backend.create()` invocation:[39m
+
+
+[31mUnique constraint failed on the fields: (`studentId`)[39m
+2022-12-10 01:16:41:1641 [31merror[39m: [31m[POST] /student/backend >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.backend.create()` invocation:[39m
+
+
+[31mUnique constraint failed on the fields: (`studentId`)[39m
+2022-12-10 13:50:20:5020 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 13:58:27:5827 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 13:58:51:5851 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Something went wrong[39m
+2022-12-10 13:59:17:5917 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 13:59:57:5957 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 13:59:59:5959 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 14:00:25:025 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 14:00:39:039 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 14:00:52:052 [31merror[39m: [31m[POST] /student/project >> StatusCode:: 500, Message:: Error: [39m
+[31mInvalid `prisma.project.create()` invocation:[39m
+
+[31m{[39m
+[31m  data: {[39m
+[31m    student: {[39m
+[31m      connect: {[39m
+[31m        id: NaN[39m
+[31m            ~~~[39m
+[31m      }[39m
+[31m    },[39m
+[31m    lecturers: {[39m
+[31m      connect: undefined[39m
+[31m    },[39m
+[31m?   tech?: {[39m
+[31m?     create?: TechListCreateWithoutProjectInput | TechListCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput | TechListUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: TechListCreateOrConnectWithoutProjectInput | TechListCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: TechListWhereUniqueInput | TechListWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   researchField?: {[39m
+[31m?     create?: ResearchFieldCreateWithoutProjectInput | ResearchFieldCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput | ResearchFieldUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchFieldCreateOrConnectWithoutProjectInput | ResearchFieldCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchFieldWhereUniqueInput | ResearchFieldWhereUniqueInput[39m
+[31m?   },[39m
+[31m?   method?: {[39m
+[31m?     create?: ResearchMethodCreateWithoutProjectInput | ResearchMethodCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput | ResearchMethodUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: ResearchMethodCreateOrConnectWithoutProjectInput | ResearchMethodCreateOrConnectWithoutProjectInput,[39m
+[31m?     connect?: ResearchMethodWhereUniqueInput | ResearchMethodWhereUniqueInput[39m
+[31m?   },[39m
+[31m+   title: String,[39m
+[31m+   description: String,[39m
+[31m?   documents?: NullableJsonNullValueInput | Json,[39m
+[31m?   images?: ProjectCreateimagesInput | String[],[39m
+[31m?   video?: String | null,[39m
+[31m?   sourceCode?: String | null,[39m
+[31m?   url?: String | null,[39m
+[31m?   isActive?: Boolean,[39m
+[31m?   type?: Generals | WebStatic | SelfHostedWeb | NodeJs,[39m
+[31m?   runtimeVersion?: String | null,[39m
+[31m?   comments?: {[39m
+[31m?     create?: CommentCreateWithoutProjectInput | CommentCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput | CommentUncheckedCreateWithoutProjectInput,[39m
+[31m?     connectOrCreate?: CommentCreateOrConnectWithoutProjectInput | CommentCreateOrConnectWithoutProjectInput,[39m
+[31m?     createMany?: CommentCreateManyProjectInputEnvelope,[39m
+[31m?     connect?: CommentWhereUniqueInput | CommentWhereUniqueInput[39m
+[31m?   }[39m
+[31m  }[39m
+[31m}[39m
+
+[31mArgument id: Got invalid value NaN on prisma.createOneProject. Provided Float, expected Int.[39m
+[31mArgument title for data.title is missing.[39m
+[31mArgument description for data.description is missing.[39m
+
+[31mNote: Lines with + are required, lines with ? are optional.[39m
+[31m[39m
+2022-12-10 15:03:28:328 [31merror[39m: [31m[GET] /admin/list-user >> StatusCode:: 500, Message:: ReferenceError: listProject is not defined[39m

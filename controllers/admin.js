@@ -6,8 +6,27 @@ import * as databaseService from "../service/database.js"
 import * as techListService from "../service/tech-list.js"
 import * as researchFieldService from "../service/research-field.js"
 import * as researchMethodService from "../service/research-method.js"
+import * as userService from "../service/user.js"
 
+export const listUser = async ( req, res, next ) => {
+    try {
+        const result = await userService.list( req.query )
 
+        res.status( 200 ).json( result )
+    } catch ( error ) {
+        next( error )
+    }
+}
+
+export const grantAdmin = async ( req, res, next ) => {
+    try {
+        const result = await userService.grantAdmin( req.body.id )
+
+        res.status( 200 ).json( result )
+    } catch ( error ) {
+        next( error )
+    }
+}
 
 export const listStudent = async ( req, res, next ) => {
     try {

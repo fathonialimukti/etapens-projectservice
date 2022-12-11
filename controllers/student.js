@@ -50,20 +50,21 @@ export const createProject = async ( req, res, next ) => {
             }
         }
         delete req.body.studentId
+
         req.body.lecturers = {
             connect: req.body.lecturers
         }
 
-        req.body.method = {
-            connect: req.body.method || undefined
+        req.body.tech = req.body.tech && {
+            connect: req.body.tech
         }
 
-        req.body.researchField = {
-            connect: req.body.researchField || undefined
+        req.body.researchField = req.body.researchField && {
+            connect: req.body.researchField
         }
 
-        req.body.method = {
-            connect: req.body.method || undefined
+        req.body.method = req.body.method && {
+            connect: req.body.method
         }
 
         const result = await projectService.create( req.body )

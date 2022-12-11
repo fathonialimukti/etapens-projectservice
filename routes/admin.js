@@ -3,10 +3,13 @@ import * as c from '../controllers/admin.js'
 
 const adminRoutes = express.Router()
 
-// adminRoutes.get( '/list-user', c.listUser )
+adminRoutes.get( '/list-user', c.listUser )
+adminRoutes.patch( '/grant-admin', c.grantAdmin )
+
 adminRoutes.get( '/list-student', c.listStudent )
-adminRoutes.get( '/list-lecturer', c.listLecturer )
 adminRoutes.patch( '/activate-student', c.activateStudent )
+
+adminRoutes.get( '/list-lecturer', c.listLecturer )
 adminRoutes.patch( '/activate-lecturer', c.activateLecturer )
 
 adminRoutes.get( '/list-project', c.listProject )

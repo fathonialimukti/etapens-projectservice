@@ -58,23 +58,24 @@ model Student {
 }
 
 model Project {
-  id            Int              @id @default(autoincrement())
-  title         String           @unique(map: "project_title")
-  description   String           @db.Text
-  documents     Json?
-  images        String[]
-  video         String?
-  sourceCode    String?
-  url           String?
-  isActive      Boolean          @default(false)
-  type          ProjectType      @default(Generals)
-  tech          TechList[]
-  researchField ResearchField[]
-  method        ResearchMethod[]
-  studentId     Int              @unique
-  student       Student          @relation(fields: [studentId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  lecturers     Lecturer[]
-  comments      Comment[]
+  id             Int              @id @default(autoincrement())
+  title          String           @unique(map: "project_title")
+  description    String           @db.Text
+  documents      Json?
+  images         String[]
+  video          String?
+  sourceCode     String?
+  url            String?
+  isActive       Boolean          @default(false)
+  type           ProjectType      @default(Generals)
+  runtimeVersion String?
+  tech           TechList[]
+  researchField  ResearchField[]
+  method         ResearchMethod[]
+  studentId      Int              @unique
+  student        Student          @relation(fields: [studentId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  lecturers      Lecturer[]
+  comments       Comment[]
 
   @@map("projects")
 }
@@ -87,13 +88,15 @@ enum ProjectType {
 }
 
 model Backend {
-  id          Int     @id @default(autoincrement())
-  isActive    Boolean @default(false)
-  sourceCode  String
-  url         String?
-  description String
-  studentId   Int     @unique
-  student     Student @relation(fields: [studentId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  id             Int         @id @default(autoincrement())
+  isActive       Boolean     @default(false)
+  sourceCode     String
+  url            String?
+  description    String
+  type           ProjectType @default(Generals)
+  runtimeVersion String?
+  studentId      Int         @unique
+  student        Student     @relation(fields: [studentId], references: [id], onDelete: Cascade, onUpdate: Cascade)
 
   @@map("project_backends")
 }
@@ -130,28 +133,25 @@ model Comment {
 }
 
 model TechList {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique(map: "tech_name")
+  id        Int       @id @default(autoincrement())
+  name      String    @unique(map: "tech_name")
   Project   Project[]
-  projectId Int?
 
   @@map("utils_tech_list")
 }
 
 model ResearchField {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique(map: "research_field")
+  id        Int       @id @default(autoincrement())
+  name      String    @unique(map: "research_field")
   Project   Project[]
-  projectId Int?
 
   @@map("utils_research_field")
 }
 
 model ResearchMethod {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique(map: "research_method")
+  id        Int       @id @default(autoincrement())
+  name      String    @unique(map: "research_method")
   Project   Project[]
-  projectId Int?
 
   @@map("utils_research_method")
 }
