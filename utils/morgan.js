@@ -2,7 +2,7 @@ import morgan from "morgan"
 import logger from "./logger.js"
 
 const stream = {
-    write: ( message ) => logger.https( message ),
+    write: ( message ) => logger.http( message ),
 }
 
 const skip = () => {
