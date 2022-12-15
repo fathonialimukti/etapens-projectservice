@@ -39,7 +39,7 @@ export const list = async ( search ) => {
         where: {
             isActive: search.isActive,
         }
-    } ) )
+    } ) / totalPage )
     return { data: listBackend, totalPage }
 }
 
