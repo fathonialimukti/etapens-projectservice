@@ -3,7 +3,7 @@ import * as c from '../controllers/index.js'
 
 const indexRoute = express.Router()
 
-indexRoute.get( '/', c.listProject )
+indexRoute.get( '', c.listProject )
 indexRoute.get( '/get-project', c.getOneProject )
 
 indexRoute.post( '/get-user', c.getUser )
