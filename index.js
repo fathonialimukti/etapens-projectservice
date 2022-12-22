@@ -33,6 +33,6 @@ app.use( errorHandler )
 
 const port = process.env.PORT || 4000
 
-app.listen( port )
+app.listen( port, () => { console.log( "app listen on port " + port ) } )
 
 // https.createServer( options, app ).listen( port )
