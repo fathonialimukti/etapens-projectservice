@@ -3,7 +3,7 @@ import * as c from '../controllers/student.js'
 
 const studentRoute = express.Router()
 
-studentRoute.get( '', c.getProfile )
+studentRoute.get( '/', c.getProfile )
 studentRoute.post( '/create', c.createStudentAccount )
 studentRoute.patch( '/update', c.updateStudentAccount )
 
