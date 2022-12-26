@@ -58,7 +58,7 @@ export const profile = async ( studentName ) => {
 
 export const list = async ( search ) => {
     const itemPerPage = parseInt( search.itemPerPage ) || 30
-    const page = search.page-- || 0
+    const page = search.page - 1 || 0
 
     const data = await students.findMany( {
         skip: page * itemPerPage,
@@ -66,7 +66,7 @@ export const list = async ( search ) => {
         where: {
             isActive: search.isActive,
             name: {
-                contains: search.name,
+                contains: search.name || undefined,
                 mode: 'insensitive'
             }
         }

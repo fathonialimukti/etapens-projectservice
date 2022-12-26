@@ -60,7 +60,7 @@ export const update = async ( data ) => {
 
 export const list = async ( search ) => {
     const itemPerPage = parseInt( search.itemPerPage ) || 30
-    const page = search.page-- || 0
+    const page = search.page - 1 || 0
 
     const data = await lecturers.findMany( {
         skip: page * itemPerPage,

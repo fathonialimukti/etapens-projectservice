@@ -37,6 +37,8 @@ export const listStudent = async ( req, res, next ) => {
         else if ( search.isActive === 'All' ) search.isActive = undefined
         else search.isActive = undefined
 
+        console.log(search);
+
         const result = await studentService.list( search )
 
         res.status( 200 ).json( result )
