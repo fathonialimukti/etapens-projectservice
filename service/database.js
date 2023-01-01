@@ -34,7 +34,7 @@ export const list = async ( search ) => {
         where: {
             isActive: search.isActive,
         }
-    } ) )
+    } ) / itemPerPage )
     return { data: listBackend, totalPage }
 }
 
