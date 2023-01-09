@@ -1,31 +1,31 @@
-import { PrismaClient, Role } from '@prisma/client'
+import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
 export const test = async () => {
     const result = await prisma.project.create( {
         data: {
-            title: "SISTEM INFORMASI PENYEWAAN DEKORASI PADA HK DECORATION",
-            description: "HK Decoration merupakan salah satu tempat penyewaan dekorasi yang berada di kabupaten Lamongan. Dalam sistem penyewaan yang digunakan masih dilakukan dengan cara manual, untuk mengetahui informasi secara detail calon penyewa harus mendatangi tempat penyedia jasa sewa. Cara ini kurang efisien untuk media promosi menjangkau masyarakat yang lebih meluas dan pencatatan secara manual sering mengakibatkan terjadinya kesalahan dalam penulisan informasi dan pelaporan data penyewaan. Pada proyek akhir ini bertujuan untuk mempermudah customer dalam mendapatkan informasi dan melakukam proses penyewaan dekorasi hingga pada tahap sistem pembayaran. Selain itu memberikan kemudahan kepada pihak penyedia jasa dalam pencatatan setiap transaksi yang terjadi hingga pada pembuatan laporan. Dari hasil yang didapat dari pengujian fungsionalitas terhadap sistem, dapat disimpulkan bahwa sistem yang dibuat dapat bekerja berdasarkan fungsinya dan sesuai dengan harapan.",
+            title: "SISTEM INFORMASI PARIWISATA DI KABUPATEN BOJONEGORO BERBASIS ANDROID",
+            description: "Kabupaten Bojonegoro, provinsi jawa timur merupakan salah satu daerah di Indonesia yang memiliki banyak pariwisata. Berbagai jenis wisata seperti wisata alam, wisata buatan, wisata kuliner, budaya, maupun agrowista terdapat di daerah tersebut. Akan tetapi dalam penyebaran informasi seputar pariwisata masih bersifat manual dan masih banyak masyarakat yang belum mengetahui tempat-tempat wisata di bojonegoro. Maka dari itu munculah ide untuk membuat sebuah sistem informasi pariwisata berbasis android yang bertujuan untuk mempermudah proses pencarian wisata di kabupaten bojonegoro. Pada penelitian ini pembuatan aplikasi tersebut menggunakan metode SDLC, kemudian frontend android menggunakan platform flutter dan juga tersedia web admin dengan menggunakan framework codeigniter Dari hasil yang didapat dari pengujian fungsionalitas terhadap sistem, dapat disimpulkan bahwa sistem yang dibuat sesuai dengan harapan.",
             documents: [
                 {
-                    "url": "https://drive.google.com/file/d/1D6myizuXKc2a8vuWUdsn46R41W0SLV2x/view?usp=share_link",
+                    "url": "https://drive.google.com/file/d/16aGZO8qZEcOL1A_EdQQ3V8wizWEINW77/view?usp=share_link",
                     "name": "Buku TA"
                 },
                 {
-                    "url": "https://drive.google.com/file/d/1NjG-oQvJQ8eF3xs2sgOLZU-FI3hw9waV/view?usp=share_link",
+                    "url": "https://drive.google.com/file/d/1OyxNXQ50E9dnAqZ3u1QY_gp5XKg_6I0q/view?usp=share_link",
                     "name": "Presentasi TA"
                 }
             ],
             images: [
-                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/49.png",
-                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/50.png",
-                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/51.png",
-                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/52.png",
-                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/53.png",
+                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/90.png",
+                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/91.png",
+                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/92.png",
+                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/93.png",
+                "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/94.png",
             ],
             tech: {
-                connect: [ { id: 28 }, { id: 29 } ]
+                connect: [ { id: 37 }, { id: 29 }, { id: 9 } ]
             },
             researchField: {
                 connect: [ { id: 3 } ]
@@ -35,45 +35,38 @@ export const test = async () => {
             // },
             student: {
                 create: {
-                    name: "Dwi Nur Azizah",
-                    nrp: "3120550046",
-                    image: "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/54.png",
-                    bio: "Bio data Mahasiswa",
+                    name: "Diana Nazilah",
+                    nrp: "3120550026",
+                    image: "https://etapens-storage140101-dev.s3.ap-southeast-1.amazonaws.com/public/dummy/95.png",
+                    bio: "Bio Data Diana Nazilah",
                     user: {
                         create: {
-                            username: "dwinurazizah",
-                            email: "dwinurazizah@it.student.pens.ac.id",
-                            role: 'Student'
+                            username: "diananazilah",
+                            email: "diananazilah@it.student.pens.ac.id",
+                            role: 'Student',
                         }
                     },
+                    isActive: true
                 }
             },
             lecturers: {
                 create: [
                     {
-                        name: "Fadilah Fahrul Hardiansyah,S.ST., M. Kom.",
-                        nip: "198901292019031013",
+                        name: "Arif Basofi, S.Kom, M.T.",
+                        nip: "1976092120031",
                         user: {
                             create: {
-                                username: "fahrul",
-                                email: "fahrul@pens.ac.id",
+                                username: "arifbasofi",
+                                email: "arifbasofi@pens.ac.id",
                                 role: 'Lecturer'
                             }
-                        }
-                    }, {
-                        name: "Nana Ramadijanti, S.Kom, M.Kom",
-                        nip: "197111091998022001",
-                        user: {
-                            create: {
-                                username: "nana",
-                                email: "nana@pens.ac.id",
-                                role: 'Lecturer'
-                            }
-                        }
+                        },
+                        isActive: true
                     },
-                ]
-                // connect: [ { id: 2 } ]
-            }
+                ],
+                connect: [ { id: 13 } ]
+            },
+            isActive: true
         }
     } )
 
